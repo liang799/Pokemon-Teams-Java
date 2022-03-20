@@ -3,13 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Rajaselvam/AndroidStudioProjects/PokeTeams/app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/Rajaselvam/AndroidStudioProjects/PokeTeams/app/src/main/res/layout/activity_splash_screen.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/Rajaselvam/AndroidStudioProjects/PokeTeams/app/src/main/res/layout/fragment_damagecalc.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/Rajaselvam/AndroidStudioProjects/PokeTeams/app/src/main/res/layout/fragment_myteam.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/Rajaselvam/AndroidStudioProjects/PokeTeams/app/src/main/res/layout/fragment_pokedex.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/Rajaselvam/AndroidStudioProjects/PokeTeams/app/src/main/res/layout/my_row.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/Rajaselvam/AndroidStudioProjects/PokeTeams/app/src/main/res/menu/bottom_nav_menu.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/tpneo/AndroidStudioProjects/PokeTeams/app/src/main/res/drawable/ic_mewtwo_logo.xml" value="0.2035" />
+        <entry key="..\:/Users/tpneo/AndroidStudioProjects/PokeTeams/app/src/main/res/layout/activity_splash_screen.xml" value="0.264" />
       </map>
     </option>
   </component>
