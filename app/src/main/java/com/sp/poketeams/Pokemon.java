@@ -6,7 +6,7 @@ public class Pokemon {
 
     public Pokemon(String pokename, String poketype) {
         this.pokename = pokename;
-        this.pokename = pokename;
+        this.poketype = poketype;
     }
 
     public String getPokename() {

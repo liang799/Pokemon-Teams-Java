@@ -51,8 +51,8 @@ public class Customadapter extends RecyclerView.Adapter<Customadapter.MyViewHold
 
         Pokemon currentitem = pokemonArrayList.get(position);
 
-        holder.historyDatetxt.setText("Pokemon: " + currentitem.getBilldate() );
-        holder.historyCosttxt.setText("Type: " + currentitem.getBillcost());
+        holder.historyDatetxt.setText("Pokemon: " + currentitem.getPokename() );
+        holder.historyCosttxt.setText("Type: " + currentitem.getPoketype());
 
     }
 
