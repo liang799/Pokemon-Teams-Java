@@ -2,16 +2,16 @@
     <!-- Base application theme. -->
     <style name="Theme.PokeTeams" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/White_1</item>
-        <item name="colorPrimaryVariant">@color/White_1</item>
-        <item name="colorOnPrimary">@color/Black</item>
+        <item name="colorPrimary">@color/Black_6</item>
+        <item name="colorPrimaryVariant">@color/Black_4</item>
+        <item name="colorOnPrimary">@color/White_1</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/White_3</item>
-        <item name="colorSecondaryVariant">@color/White_1</item>
-        <item name="colorOnSecondary">@color/Black</item>
+        <item name="colorSecondary">@color/Purple_3</item>
+        <item name="colorSecondaryVariant">@color/Purple_1</item>
+        <item name="colorOnSecondary">@color/White_4</item>
         <!-- Status bar color. -->
         <!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="Black">#FF000000</color>
-    <color name="Green">#0E8C18</color>
     <color name="Gray">#707070</color>
+
+    <!-- Light Mode colors -->
     <color name="White_1">#FEFEFE</color>
     <color name="White_2">#F8F9FB</color>
     <color name="White_3">#F5F5F5</color>
     <color name="White_4">#F0EEEE</color>
+    <color name="Green_1">#0E8C18</color>
+    <color name="Green_2">#004105</color>
+
+    <!-- Dark Mode colors -->
+    <color name="Black_1">#ADACAC</color>
+    <color name="Black_2">#919191</color>
+    <color name="Black_3">#2C3135</color>
+    <color name="Black_4">#262A2D</color>
+    <color name="Black_5">#1F1F1F</color>
+    <color name="Black_6">#191B1C</color>
+    <color name="Purple_1">#E4DCF1</color>
+    <color name="Purple_2">#D2B6FF</color>
+    <color name="Purple_3">#8874A3</color>
 
     <color name="colorPrimary">@color/White_1</color>
-    <color name="colorPrimaryDark">@color/White_1</color>
+    <color name="colorPrimaryDark">@color/Black_5</color>
 </resources>

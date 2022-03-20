@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FEFEFE">
+    android:background="?attr/colorPrimary">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -24,7 +24,7 @@
         android:layout_marginBottom="4dp"
         android:fontFamily="sans-serif-medium"
         android:text="PokeTeam"
-        android:textColor="#004105"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="(not affiliated with Nintendo and Pokémon)"
-        android:textColor="#004105"
+        android:textColor="?attr/colorSecondaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
