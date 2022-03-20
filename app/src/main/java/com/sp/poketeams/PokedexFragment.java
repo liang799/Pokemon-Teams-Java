@@ -70,7 +70,7 @@ public class PokedexFragment extends Fragment {
             });
 
             try {
-                URL url = new URL("https://api.npoint.io/cbb709d068583b916068");
+                URL url = new URL("https://pokeapi.co/api/v2/pokemon/zekrom");
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 InputStream inputStream = httpURLConnection.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
