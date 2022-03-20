@@ -5,11 +5,11 @@
         <item name="android:windowLightStatusBar">true</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/White_1</item>
-        <item name="colorPrimaryVariant">@color/White_1</item>
+        <item name="colorPrimaryVariant">@color/White_4</item>
         <item name="colorOnPrimary">@color/Black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/White_3</item>
-        <item name="colorSecondaryVariant">@color/White_1</item>
+        <item name="colorSecondary">@color/Green_1</item>
+        <item name="colorSecondaryVariant">@color/Green_2</item>
         <item name="colorOnSecondary">@color/Black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
