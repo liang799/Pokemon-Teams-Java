@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Customadapter extends RecyclerView.Adapter<Customadapter.MyViewHolder>{
 
     Context context;
-    ArrayList historyID;
+    ArrayList poketype, pokename;
 
     ArrayList<Pokemon> pokemonArrayList = new ArrayList<>();
 
@@ -29,10 +29,10 @@ public class Customadapter extends RecyclerView.Adapter<Customadapter.MyViewHold
     }
 
 
-    Customadapter(Context context, ArrayList historyID, ArrayList<Pokemon> pokemonarraylist){
+    Customadapter(Context context, ArrayList pokename, ArrayList poketype){
         this.context = context;
-        this.historyID = historyID;
-        this.pokemonArrayList = pokemonarraylist;
+        this.pokename = pokename;
+        this.poketype = poketype;
     }
 
     @NonNull
@@ -51,8 +51,8 @@ public class Customadapter extends RecyclerView.Adapter<Customadapter.MyViewHold
 
         Pokemon currentitem = pokemonArrayList.get(position);
 
-        holder.historyDatetxt.setText("Pokemon: " + currentitem.getPokename() );
-        holder.historyCosttxt.setText("Type: " + currentitem.getPoketype());
+        holder.pokenametxt.setText("Pokemon: " + pokename.get(position) );
+        holder.poketypetxt.setText("Type: " + poketype.get(position));
 
     }
 
@@ -63,12 +63,12 @@ public class Customadapter extends RecyclerView.Adapter<Customadapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView historyDatetxt,historyCosttxt,historyWhatfortxt;
+        TextView pokenametxt ,poketypetxt;
 
         public MyViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
-            historyDatetxt = itemView.findViewById(R.id.pokemonname);
-            historyCosttxt = itemView.findViewById(R.id.type);
+            pokenametxt = itemView.findViewById(R.id.pokemonname);
+            poketypetxt = itemView.findViewById(R.id.type);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

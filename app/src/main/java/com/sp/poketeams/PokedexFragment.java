@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,15 +29,20 @@ import java.util.ArrayList;
 
 public class PokedexFragment extends Fragment {
 
-    ArrayList<String> userList;
+    ArrayList<String> userListn, userListt;
     ArrayAdapter<String> listAdapter;
     Handler mainHandler =  new Handler();
     ProgressDialog progressDialog;
+    Customadapter customadapter;
+
+    RecyclerView pokeview;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_pokedex,container,false);
+
+        pokeview = v.findViewById(R.id.userList);
 
         new fetchData().start();
 
@@ -63,7 +70,6 @@ public class PokedexFragment extends Fragment {
             });
 
             try {
-                //https://www.npoint.io/docs/cbb709d068583b916068
                 URL url = new URL("https://api.npoint.io/cbb709d068583b916068");
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 InputStream inputStream = httpURLConnection.getInputStream();
@@ -76,12 +82,20 @@ public class PokedexFragment extends Fragment {
 
                 if (!data.isEmpty()){
                     JSONObject jsonObject = new JSONObject(data);
-                    JSONArray users = jsonObject.getJSONArray("Users");
-                    userList.clear();
+                    JSONArray users = jsonObject.getJSONArray("forms");
+                    userListn.clear();
                     for(int  i =0;i< users.length();i++){
                         JSONObject names = users.getJSONObject(i);
-                        String name = names.getString("name2");
-                        userList.add(name);
+                        String name = names.getString("name");
+                        userListn.add(name);
+                    }
+
+                    JSONArray typesj = jsonObject.getJSONArray("forms");
+                    userListt.clear();
+                    for(int  i =0;i< users.length();i++){
+                        JSONObject types = users.getJSONObject(i);
+                        String type = types.getString("name");
+                        userListt.add(type);
 
                     }
                 }
@@ -97,9 +111,13 @@ public class PokedexFragment extends Fragment {
                 @Override
                 public void run() {
 
-                    if (progressDialog.isShowing())
-                        progressDialog.dismiss();
-                    listAdapter.notifyDataSetChanged();
+
+                    customadapter = new Customadapter(getContext(),userListn,userListt);
+                    pokeview.setAdapter(customadapter);
+                    pokeview.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+                    customadapter.notifyDataSetChanged();
                 }
             });
         }
