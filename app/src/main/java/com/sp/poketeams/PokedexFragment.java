@@ -3,6 +3,7 @@ package com.sp.poketeams;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,8 +30,8 @@ import java.util.ArrayList;
 
 public class PokedexFragment extends Fragment {
 
-    ArrayList<String> userListn, userListt;
-    ArrayAdapter<String> listAdapter;
+    ArrayList<String> userListn = new ArrayList<String>();
+    ArrayList<String> userListt = new ArrayList<String>();
     Handler mainHandler =  new Handler();
     ProgressDialog progressDialog;
     Customadapter customadapter;
@@ -43,6 +44,10 @@ public class PokedexFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_pokedex,container,false);
 
         pokeview = v.findViewById(R.id.userList);
+
+        customadapter = new Customadapter(getContext(),userListn,userListt);
+        pokeview.setAdapter(customadapter);
+        pokeview.setLayoutManager(new LinearLayoutManager(getContext()));
 
         new fetchData().start();
 
@@ -61,10 +66,10 @@ public class PokedexFragment extends Fragment {
                 @Override
                 public void run() {
 
-                    progressDialog = new ProgressDialog(getContext());
+                    /*progressDialog = new ProgressDialog(getContext());
                     progressDialog.setMessage("Fetching Data");
                     progressDialog.setCancelable(false);
-                    progressDialog.show();
+                    progressDialog.show();*/
 
                 }
             });
@@ -87,14 +92,16 @@ public class PokedexFragment extends Fragment {
                     for(int  i =0;i< users.length();i++){
                         JSONObject names = users.getJSONObject(i);
                         String name = names.getString("name");
+                        Log.d("ACT1", name);
                         userListn.add(name);
                     }
 
-                    JSONArray typesj = jsonObject.getJSONArray("forms");
+                    JSONArray typesj = jsonObject.getJSONArray("type");
                     userListt.clear();
-                    for(int  i =0;i< users.length();i++){
-                        JSONObject types = users.getJSONObject(i);
+                    for(int  i =0;i< typesj.length();i++){
+                        JSONObject types = typesj.getJSONObject(i);
                         String type = types.getString("name");
+                        Log.d("ACT1", type);
                         userListt.add(type);
 
                     }
