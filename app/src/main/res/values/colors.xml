@@ -7,4 +7,7 @@
     <color name="White_2">#F8F9FB</color>
     <color name="White_3">#F5F5F5</color>
     <color name="White_4">#F0EEEE</color>
+
+    <color name="colorPrimary">@color/White_1</color>
+    <color name="colorPrimaryDark">@color/White_1</color>
 </resources>
