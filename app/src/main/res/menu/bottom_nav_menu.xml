@@ -2,15 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_Pokedex"
-        android:title="PokeDex" />
-
+        android:id="@+id/nav_Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
     <item
-        android:id="@+id/nav_MyTeam"
-        android:title="My Teams" />
-
+        android:id="@+id/nav_Calc"
+        android:icon="@drawable/ic_baseline_feedback_24"
+        android:title="Feedback" />
     <item
-        android:id="@+id/nav_DamageCalc"
-        android:title="Damage Calculator" />
+        android:id="@+id/nav_Team"
+        android:icon="@drawable/ic_pokeball"
+        android:title="Teams" />
 
 </menu>

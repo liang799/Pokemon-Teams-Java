@@ -1,47 +1,51 @@
 package com.sp.poketeams;
 
+import static androidx.navigation.ui.NavigationUI.setupActionBarWithNavController;
+
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+    private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNav = findViewById(R.id.botttom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navlistener);
+        /* ---- Binding Views ---- */
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        NavController navController = Navigation.findNavController(this, R.id.fragment_container);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new PokedexFragment()).commit();
+        /* ---- Navigation using NavGraph ---- */
+        appBarConfiguration =
+                new AppBarConfiguration.Builder(navController.getGraph()).build();
+        setSupportActionBar(toolbar);
+        setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navlistener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.fragment_container);
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
 
-                    switch (item.getItemId()){
-                        case R.id.nav_Pokedex:
-                            selectedFragment = new PokedexFragment();
-                            break;
-                        case R.id.nav_MyTeam:
-                            selectedFragment = new MyTeamFragment();
-                            break;
-                        case R.id.nav_DamageCalc:
-                            selectedFragment = new DamageCalcFragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
-
-                    return true;
-                }
-            };
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        NavController navController = Navigation.findNavController(this, R.id.fragment_container);
+        return NavigationUI.onNavDestinationSelected(item, navController)
+                || super.onOptionsItemSelected(item);
+    }
 }
