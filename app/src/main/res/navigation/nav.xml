@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav"
+    app:startDestination="@id/nav_Home">
+
+    <fragment
+        android:id="@+id/nav_Home"
+        android:name="com.sp.poketeams.PokedexFragment"
+        android:label="PokedexFragment" >
+        <action
+            android:id="@+id/action_pokedexFragment_to_myTeamFragment"
+            app:destination="@id/nav_Team" />
+        <action
+            android:id="@+id/action_pokedexFragment_to_damageCalcFragment"
+            app:destination="@id/nav_Calc" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_Team"
+        android:name="com.sp.poketeams.MyTeamFragment"
+        android:label="MyTeamFragment" />
+    <fragment
+        android:id="@+id/nav_Calc"
+        android:name="com.sp.poketeams.DamageCalcFragment"
+        android:label="DamageCalcFragment" />
+</navigation>
