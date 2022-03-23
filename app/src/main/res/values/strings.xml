@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PokeTeams</string>
+    <string name="search_hint">Pokémon, Type, Tier and More</string>
 </resources>
